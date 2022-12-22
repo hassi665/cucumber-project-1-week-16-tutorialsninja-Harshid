@@ -1,7 +1,7 @@
 Feature: Product Checkout
   As user I want to checkout online from tutorialsninja  website
 
-  @regression
+  @sanity @regression
   Scenario: User can add product in shopping cart from Desktop menu
     Given I am on homepage
     When  I mouse hover “Desktops” Tab and click
@@ -15,7 +15,7 @@ Feature: Product Checkout
     And   I change the currency to "£" from "$"
     Then  I redirected to shopping cart page
 
-  @regression
+  @smoke @regression
   Scenario: User can add product in shopping cart from Laptops & Notebooks menu
     Given I am on homepage
     When  I mouse hover on “Laptops & Notebooks”
