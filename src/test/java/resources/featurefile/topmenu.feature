@@ -2,7 +2,7 @@ Feature: Desktop Menu
   As a user I am going to nevigate all required page
 
 
-  @sanity
+  @sanity @regression
   Scenario: User should navigate to page successfully after clicked on menu
     Given I am on homepage
     When  I mouse hover “Desktops” Tab and click
@@ -14,7 +14,7 @@ Feature: Desktop Menu
     Then  I able to see on respective page
 
 
-  @sanity @smoke
+  @smoke @regression
   Scenario: User can see product with sort By requirement
     Given I am on homepage
     When  I mouse hover “Desktops” Tab and click
