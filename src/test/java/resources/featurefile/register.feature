@@ -1,7 +1,7 @@
 Feature: Register Test
   As user I want to register into tutorialsninja  website
 
-  @smoke12
+  @regression
   Scenario: User should create account successfully
     Given I am on homepage
     When  I click on myaccount link
