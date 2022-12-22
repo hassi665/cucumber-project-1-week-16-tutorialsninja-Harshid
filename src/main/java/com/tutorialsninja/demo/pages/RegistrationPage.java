@@ -94,7 +94,7 @@ public class RegistrationPage extends Utility {
 
     public void sendTextIntoEmailField(String email1) {
 
-        sendTextToElement(email, email1 );
+        sendTextToElement(email, email1 + getAlphaNumericString(2) + "@gmail.com" );
         log.info("Enter user email " + email1 + " to Email field " + email.toString());
     }
 
@@ -154,15 +154,15 @@ public class RegistrationPage extends Utility {
         log.info("Clicking on continue Button " + continueFurtherAccountCreation.toString());
     }
 
-    public void registerAsGuestOnCheckout(String frstName, String lstName, String email1, String number, String password1, String confrmpassword1, String subcrb){
+    public void registerAsGuestOnCheckout(){
 
-        sendTextFirstIntoNameField(frstName);
-        sendTextIntoLastNameField(lstName);
-        sendTextIntoEmailField(email1);
-        sendTexIntoTelephoneNumberField(number);
-        enteredPasswordIntoPasswordField(password1);
-        enteredConfirmPasswordIntoPasswordField(confrmpassword1);
-        selectSubscribtionButtons(subcrb);
+        sendTextFirstIntoNameField("Harshid");
+        sendTextIntoLastNameField("Prime");
+        sendTextIntoEmailField("harshid.prime");
+        sendTexIntoTelephoneNumberField("07894563210");
+        enteredPasswordIntoPasswordField("Harshid@123");
+        enteredConfirmPasswordIntoPasswordField("Harshid@123");
+        selectSubscribtionButtons("yes");
         clickOnPrivacyButton();
         clickOnContinueButton();
     }

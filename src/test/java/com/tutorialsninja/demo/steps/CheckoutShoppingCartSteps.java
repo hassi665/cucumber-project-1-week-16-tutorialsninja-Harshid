@@ -145,18 +145,17 @@ public class CheckoutShoppingCartSteps extends Utility {
 
     @And("^I Click on “continue” button in reg form$")
     public void iClickOnContinueButtonInRegForm() throws InterruptedException {
+
         checkoutPage.clickOnContinueGuestBttn();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
+
 
     }
 
-    @And("^I Add Comments About your order into text area$")
-    public void iAddCommentsAboutYourOrderIntoTextArea() throws InterruptedException {
-
-        checkoutPage.clickOnMessageSection();
-        Thread.sleep(2000);
-        checkoutPage.sendTextToCommentField("very good service");
-        Thread.sleep(800);
+    @And("^I add a comment \"([^\"]*)\"$")
+    public void iAddAComment(String cmnt) throws Throwable {
+        Thread.sleep(500);
+        checkoutPage.sendTextToCommentField(cmnt);
     }
 
     @And("^I Check the Terms & Conditions check box$")
@@ -175,8 +174,6 @@ public class CheckoutShoppingCartSteps extends Utility {
     public void iWillGetSomeErrorMessage() {
         checkoutPage.getPaymentError();
     }
-
-
 
 
 

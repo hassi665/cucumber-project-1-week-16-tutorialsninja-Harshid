@@ -23,7 +23,7 @@ public class RegisterStep extends Utility {
     @And("^I fill all the required details for registration$")
     public void iFillAllTheRequiredDetailsForRegistration() {
 
-        registrationPage.registerAsGuestOnCheckout("Harshid_687", "Patel", "harshid.patel_687@gmail.com", "07894563214", "Harshid@687", "Harshid@687", "Yes");
+        registrationPage.registerAsGuestOnCheckout();
     }
 
     @And("^I again click on \"([^\"]*)\" link$")

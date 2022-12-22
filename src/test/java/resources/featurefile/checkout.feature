@@ -1,7 +1,7 @@
 Feature: Product Checkout
   As user I want to checkout online from tutorialsninja  website
 
-  @regression @sanity
+  @regression
   Scenario: User can add product in shopping cart from Desktop menu
     Given I am on homepage
     When  I mouse hover “Desktops” Tab and click
@@ -15,7 +15,7 @@ Feature: Product Checkout
     And   I change the currency to "£" from "$"
     Then  I redirected to shopping cart page
 
-  @regression @smoke
+  @regression
   Scenario: User can add product in shopping cart from Laptops & Notebooks menu
     Given I am on homepage
     When  I mouse hover on “Laptops & Notebooks”
@@ -31,8 +31,7 @@ Feature: Product Checkout
     And   I Click on “Guest Checkout” radio button
     And   I Click on “continue” tab
     And   I filled the required information
-    And   I Click on “continue” button in reg form
-    And   I Add Comments About your order into text area
+    And   I add a comment "Deliver me immediatly"
     And   I Check the Terms & Conditions check box
     And   I Click on “Continue” button after comment
     Then  I will get some error message

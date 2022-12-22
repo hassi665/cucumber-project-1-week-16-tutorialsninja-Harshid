@@ -71,7 +71,7 @@ public class CheckoutPage extends Utility {
     WebElement region;
 
     @CacheLookup
-    @FindBy(css = "#button-guest")
+    @FindBy(xpath = "//input[@id='button-guest']")
     WebElement guestButton;
 
     @CacheLookup
@@ -79,8 +79,8 @@ public class CheckoutPage extends Utility {
     WebElement guestButtonCheckout;
 
     @CacheLookup
-    @FindBy(xpath = "//div[@class='panel-group']/div[3]/div[2]/div[1]/p[2]/textarea[1]")
-    WebElement comment;
+    @FindBy(xpath = "//body/div[@id='checkout-checkout']/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/p[2]/textarea[1]")
+    WebElement commentField;
 
     @CacheLookup
     @FindBy(name = "agree")
@@ -181,16 +181,11 @@ public class CheckoutPage extends Utility {
 
     }
 
-    public void clickOnMessageSection(){
 
-        clickOnElement(comment);
-        log.info("Click on omment boxt" + comment.toString());
-    }
+    public void sendTextToCommentField(String comment) {
 
-    public void sendTextToCommentField(String cmnt) {
-
-        sendTextToElement(comment, cmnt);
-        log.info("Input comments : " + cmnt + "In appropriate line " + comment.toString());
+        sendTextToElement(commentField, comment);
+        log.info("Input comments : " + comment + "In appropriate line " + comment.toString());
     }
 
     public void clickOnTerms() {
@@ -212,7 +207,7 @@ public class CheckoutPage extends Utility {
         return text;
     }
 
-    public void registerToApplicationAsGuest(String frstName, String lstname,String uEmail, String num, String adrs, String cty, String pCode, String ctry, String regn) {
+    public void registerToApplicationAsGuest(String frstName, String lstname,String uEmail, String num, String adrs, String cty, String pCode, String ctry, String regn) throws InterruptedException {
 
         sendTextToFirstNameLine(frstName);
         sendTextToLastNameLine(lstname);
@@ -222,7 +217,11 @@ public class CheckoutPage extends Utility {
         sendTextToCityLine(cty);
         sendTextToPostCodeLine(pCode);
         selectCountryLine(ctry);
+        Thread.sleep(1000);
         selectRegionLine(regn);
+        Thread.sleep(1000);
         clickOnContinueGuestBttn();
+        Thread.sleep(2000);
+
     }
 }
